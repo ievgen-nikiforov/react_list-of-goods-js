@@ -14,12 +14,12 @@ export const goodsFromServer = [
   'Jam',
   'Garlic',
 ];
+  const [sortedGoods, setSortedGoods] = useState([...goodsFromServer]);
+  const [initialState, setInitialState] = useState(true);
+  const [type, setType] = useState('');
 
 export const App = () => {
-  let [sortedGoods, setSortedGoods] = useState([...goodsFromServer]);
   const resetFunction = () => {setSortedGoods([...goodsFromServer]); setInitialState(true); setType('');};
-  let [initialState, setInitialState] = useState(true);
-  let [type, setType] = useState('');
   const sortFunction = type => {
     setType(type);
     setInitialState(false);
