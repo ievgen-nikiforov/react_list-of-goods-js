@@ -32,7 +32,7 @@ export const App = () => {
         setSortedGoods([...goodsFromServer].sort((a, b) => a.length - b.length));
         break;
       case 'reverse':
-        setSortedGoods([...goodsFromServer].reverse());
+        setSortedGoods([...sortedGoods].reverse());
         break;
       default:
         setSortedGoods([...goodsFromServer]);
