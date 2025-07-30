@@ -20,10 +20,10 @@ export const goodsFromServer = [
 
 export const App = () => {
   const resetFunction = () => {setSortedGoods([...goodsFromServer]); setInitialState(true); setType('');};
-  const sortFunction = type => {
-    setType(type);
+  const sortFunction = sortType  => {
+    setType(sortType );
     setInitialState(false);
-    switch (type) {
+    switch (sortType ) {
       case 'alphabetical': {
         setSortedGoods([...goodsFromServer].sort((a, b) => a.localeCompare(b)));
         break;
@@ -32,7 +32,7 @@ export const App = () => {
         setSortedGoods([...goodsFromServer].sort((a, b) => a.length - b.length));
         break;
       case 'reverse':
-        setSortedGoods([...sortedGoods].reverse());
+        setSortedGoods([...goodsFromServer].reverse());
         break;
       default:
         setSortedGoods([...goodsFromServer]);
